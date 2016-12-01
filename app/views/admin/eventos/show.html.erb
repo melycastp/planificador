@@ -1,0 +1,30 @@
+<h1>Eventos - Mostrar</h1>
+<br>
+<%= link_to "Nuevo Evento", new_admin_evento_path %>
+<br>
+<% if notice.present? %>
+	<b><%= notice %></b>
+<% end %>
+<br>
+<table>
+	<thead>
+		<tr>
+			<th>Fecha</th>
+			<th>Hora</th>
+			<th>Descripcion</th>
+			<th>Importante</th>
+			<th>Usuario</th>
+			<th>Tipo Evento</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= "#{@evento.fecha}"%></td>
+			<td><%= "#{@evento.hora}" %></td>
+			<td><%= "#{@evento.descripcion}" %></td>
+			<td><%= "#{@evento.importante}" %></td>
+			<td><%= "#{@evento.usuario}" %></td>
+			<td><%= "#{@evento.eventotipo.nombre}" %></td>
+		</tr>
+	</tbody>	
+</table>

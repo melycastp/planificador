@@ -1,0 +1,31 @@
+<h1>Tipos de Eventos - Inicio</h1>
+<% if notice.present? %>
+	<b><%= notice %></b>
+<% end %>
+<br>
+<% if @tipoeventos.blank? %>
+	<p style="color:#CC1C1C; font-weight:bold">No hay elementos en la Base de Datos</p>
+<% else %>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre Tipo Evento</th>
+				<th>Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @tipoeventos.each do |e| %>
+			<tr>
+				<td><%= "#{e.id}"%></td>
+				<td><%= "#{e.nombre}" %></td>
+				<td>
+					<%= link_to "Mostrar", admin_eventotipo_path(e), :class => 'btn btn-mini btn-info' %>
+					<%= link_to "Editar", edit_admin_eventotipo_path(e), :class => 'btn btn-mini btn-default' %>
+					<%= link_to "Eliminar", admin_eventotipo_path(e), method: :delete, data: { confirm: "Eliminar Elemento?"}, :class => 'btn btn-mini btn-danger' %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipo: MyString
+  fecha: MyString
+  hora: MyString
+  descripcion: MyString
+  importante: MyString
+  usuario: MyString
+
+two:
+  tipo: MyString
+  fecha: MyString
+  hora: MyString
+  descripcion: MyString
+  importante: MyString
+  usuario: MyString

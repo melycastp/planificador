@@ -1,0 +1,43 @@
+<h1>Eventos - Inicio</h1>
+<% if notice.present? %>
+	<b><%= notice %></b>
+<% end %>
+<br>
+<% if @eventos.blank? %>
+	<p style="color:#CC1C1C; font-weight:bold">No hay elementos en la Base de Datos</p>
+<% else %>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Fecha</th>
+				<th>Hora</th>
+				<th>Descripción</th>
+				<th>Importante</th>
+				<th>Usuario</th>
+				<th>Tipo de Evento</th>
+				<th>Opciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @eventos.each do |e| %>
+			<tr>
+				<td><%= "#{e.id}"%></td>
+				<td><%= "#{e.fecha}"%></td>
+				<td><%= "#{e.hora}" %></td>
+				<td><%= "#{e.descripcion}" %></td>
+				<td><%= "#{e.importante}" %></td>
+				<td><%= "#{e.usuario}" %></td>
+				<td><%= "#{e.eventotipo.nombre}" %></td>
+				<td>
+					<%= link_to "Mostrar", admin_evento_path(e), :class => 'btn btn-mini btn-info'%>
+					<%= link_to "Editar", edit_admin_evento_path(e), :class => 'btn btn-mini btn-default' %>
+					<%= link_to "Eliminar", admin_evento_path(e), method: :delete, data: { confirm: "Eliminar Elemento?"}, :class => 'btn btn-mini btn-danger' %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>
+
+<div id="calendar"></div>

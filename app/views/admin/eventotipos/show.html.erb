@@ -1,0 +1,20 @@
+<h1>Tipo de Evento - Mostrar</h1>
+<br>
+<%= link_to "Nuevo Evento", new_admin_eventotipo_path %>
+<br>
+<% if notice.present? %>
+	<b><%= notice %></b>
+<% end %>
+<br>
+<table>
+	<thead>
+		<tr>
+			<th>Nombre</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= "#{@tipoeventos.nombre}" %></td>
+		</tr>
+	</tbody>	
+</table>
