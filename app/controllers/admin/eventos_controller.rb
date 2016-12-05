@@ -44,6 +44,6 @@ class Admin::EventosController < ApplicationController
 
   private 
   	def evento_params
-  		params.require(:evento).permit(:fecha,:hora,:descripcion,:importante,:usuario,:eventotipo_id)
+  		params.require(:evento).permit(:fechainicial,:fechafinal,:horainicial,:horafinal,:descripcion,:importante,:usuario,:eventotipo_id)
   	end
 end

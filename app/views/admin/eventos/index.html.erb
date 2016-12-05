@@ -10,8 +10,10 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Fecha</th>
-				<th>Hora</th>
+				<th>Fecha Inicial</th>
+				<th>Fecha Final</th>
+				<th>Hora Inicial</th>
+				<th>Hora Final</th>
 				<th>Descripción</th>
 				<th>Importante</th>
 				<th>Usuario</th>
@@ -23,8 +25,10 @@
 			<% @eventos.each do |e| %>
 			<tr>
 				<td><%= "#{e.id}"%></td>
-				<td><%= "#{e.fecha}"%></td>
-				<td><%= "#{e.hora}" %></td>
+				<td><%= "#{e.fechainicial}"%></td>
+				<td><%= "#{e.fechafinal}"%></td>
+				<td><%= "#{e.horainicial}" %></td>
+				<td><%= "#{e.horafinal}" %></td>
 				<td><%= "#{e.descripcion}" %></td>
 				<td><%= "#{e.importante}" %></td>
 				<td><%= "#{e.usuario}" %></td>

@@ -9,8 +9,10 @@
 <table>
 	<thead>
 		<tr>
-			<th>Fecha</th>
-			<th>Hora</th>
+			<th>Fecha Inicial</th>
+			<th>Fecha Final</th>
+			<th>Hora Inicial</th>
+			<th>Hora Final</th>
 			<th>Descripcion</th>
 			<th>Importante</th>
 			<th>Usuario</th>
@@ -19,8 +21,10 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td><%= "#{@evento.fecha}"%></td>
-			<td><%= "#{@evento.hora}" %></td>
+			<td><%= "#{@evento.fechainicial}"%></td>
+			<td><%= "#{@evento.fechafinal}"%></td>
+			<td><%= "#{@evento.horainicial}" %></td>
+			<td><%= "#{@evento.horafinal}" %></td>
 			<td><%= "#{@evento.descripcion}" %></td>
 			<td><%= "#{@evento.importante}" %></td>
 			<td><%= "#{@evento.usuario}" %></td>
