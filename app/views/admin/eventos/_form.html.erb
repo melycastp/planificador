@@ -1,51 +1,39 @@
 <%= render 'utilidades/errores', current_model: @evento %>
 <%= form_for(['admin',@evento], html: {class: 'form-horizontal'}) do |f| %>
 	<div class="form-group">
+		<%= f.label :date_range, class: 'col-sm-2 control-label' %>
+		<div class="col-sm-10">
+			<%= f.text_field :date_range, class: "form-control input-sm date-range-picker" %>
+		</div>
+	</div>
+	<div class="form-group">
 		<%= f.label :fechainicial, class: 'col-sm-2 control-label' %>
 		<div class="col-sm-10">
-			<%= f.text_field :fechainicial, class: 'form-control datepicker' %>
+			<%= f.text_field :fechainicial, as: :hidden, value: Date.today, class: 'form-control input-sm fechainicial_hidden'%>
 		</div>
 	</div>
 	<div class="form-group">
 		<%= f.label :fechafinal, class: 'col-sm-2 control-label' %>
 		<div class="col-sm-10">
-			<%= f.text_field :fechafinal, class: 'form-control datepicker' %>
-		</div>
-	</div>
-	<div class="form-group">
-		<%= f.label :horainicial, class: 'col-sm-2 control-label' %>
-		<div class="col-sm-10">
-			<%= f.text_field :horainicial, class: 'form-control' %>
-		</div>
-	</div>
-	<div class="form-group">
-		<%= f.label :horafinal, class: 'col-sm-2 control-label' %>
-		<div class="col-sm-10">
-			<%= f.text_field :horafinal, class: 'form-control' %>
+			<%= f.text_field :fechafinal, as: :hidden, value: Date.today, class: 'form-control input-sm fechafinal_hidden' %>
 		</div>
 	</div>
 	<div class="form-group">
 		<%= f.label :descripcion, class: 'col-sm-2 control-label' %>
 		<div class="col-sm-10">
-			<%= f.text_field :descripcion, class: 'form-control' %>
-		</div>
-	</div>
-	<div class="form-group">
-		<%= f.label :importante, class: 'col-sm-2 control-label' %>
-		<div class="col-sm-10">
-			<%= f.text_field :importante, class: 'form-control' %>
-		</div>
-	</div>
-	<div class="form-group">
-		<%= f.label :usuario, class: 'col-sm-2 control-label' %>
-		<div class="col-sm-10">
-			<%= f.text_field :usuario, class: 'form-control' %>	
+			<%= f.text_field :descripcion,  class: 'form-control' %>
 		</div>
 	</div>
 	<div class="form-group">
 		<%= f.label :eventotipo_id, class: 'col-sm-2 control-label' %>
 		<div class="col-sm-10">
 			<%= f.select :eventotipo_id, Eventotipo.all.map{ |s| [s.nombre, s.id]}, class: 'form-control' %>
+		</div>
+	</div>
+	<div class="form-group">
+		<%= f.label :color, class: 'col-sm-2 control-label' %>
+		<div class="col-sm-10">
+			<%= f.select :color, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
 		</div>
 	</div>
 	<div class="form-group">

@@ -16,28 +16,45 @@
 //= require moment 
 //= require fullcalendar
 //= require full_calendar
+//= require locale-all
 //= requite daterangepicker
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
 
-$.datepicker.regional['es'] = {
- closeText: 'Cerrar',
- prevText: '<Ant',
- nextText: 'Sig>',
- currentText: 'Hoy',
- monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
- monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
- dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
- dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
- dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
- weekHeader: 'Sm',
- dateFormat: 'dd/mm/yy',
- firstDay: 1,
- isRTL: false,
- showMonthAfterYear: false,
- yearSuffix: ''
- };
- $.datepicker.setDefaults($.datepicker.regional['es']);
 $(function() {
-  $('.datepicker').datepicker();
+  $.getScript('admin/eventos/new', function() {
+          $('#evento_date_range').val(moment(start).format("MM/DD/YYYY HH:mm") + ' - ' + moment(end).format("MM/DD/YYYY HH:mm"))
+          date_range_picker();
+          $('.fechainicial_hidden').val(moment(start).format('YYYY-MM-DD HH:mm'));
+          $('.fechafinal_hidden').val(moment(end).format('YYYY-MM-DD HH:mm'));
+        });
 });
+
+
+/*$( function() {
+    var dialog
+
+    dialog = $( "#dialog").dialog({
+      autoOpen: false,
+      height: 200,
+      width: 350,
+      modal: true,
+      buttons: {
+        "Crear": {
+        	function: add,
+        	text: "Crear",
+        	class: "btn btn-success"
+        }
+      }
+    });
+
+    function add() {;
+    	$( "#dialog").dialog( "close" );
+    }
+
+    $("#create-note" ).button().on( "click", function() {
+      dialog.dialog( "open" );
+	});
+ 
+});*/

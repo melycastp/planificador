@@ -3,7 +3,9 @@ class Admin::EventosController < ApplicationController
   before_action :authenticate_user!
   
   def index
-  	@eventos = Evento.all
+    @evento = Evento.all
+  	#@evento = Evento.where(fechainicial: params[:start]..params[:end])
+     #render(@evento, format: :json)
   end
 
   def new
@@ -11,7 +13,6 @@ class Admin::EventosController < ApplicationController
   end
 
   def show
-  	@evento = Evento.find(params[:id])
   end
 
   def edit
@@ -42,8 +43,12 @@ class Admin::EventosController < ApplicationController
     redirect_to admin_eventos_path, notice: "Evento Eliminado"
   end
 
-  private 
+  private
+    def set_event
+      @evento = Event.find(params[:id])
+    end
+
   	def evento_params
-  		params.require(:evento).permit(:fechainicial,:fechafinal,:horainicial,:horafinal,:descripcion,:importante,:usuario,:eventotipo_id)
+  		params.require(:evento).permit(:date_range,:fechainicial,:fechafinal,:descripcion,:eventotipo_id, :color)
   	end
 end

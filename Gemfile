@@ -26,9 +26,11 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'bootstrap-sass'
 
 gem 'devise'
 gem 'bcrypt'
+gem 'bootstrap-daterangepicker-rails', '~> 0.1.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -46,6 +48,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
   gem 'pry-byebug'
+  gem 'spring'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :development do

@@ -11,11 +11,7 @@
 		<tr>
 			<th>Fecha Inicial</th>
 			<th>Fecha Final</th>
-			<th>Hora Inicial</th>
-			<th>Hora Final</th>
 			<th>Descripcion</th>
-			<th>Importante</th>
-			<th>Usuario</th>
 			<th>Tipo Evento</th>
 		</tr>
 	</thead>
@@ -23,11 +19,7 @@
 		<tr>
 			<td><%= "#{@evento.fechainicial}"%></td>
 			<td><%= "#{@evento.fechafinal}"%></td>
-			<td><%= "#{@evento.horainicial}" %></td>
-			<td><%= "#{@evento.horafinal}" %></td>
 			<td><%= "#{@evento.descripcion}" %></td>
-			<td><%= "#{@evento.importante}" %></td>
-			<td><%= "#{@evento.usuario}" %></td>
 			<td><%= "#{@evento.eventotipo.nombre}" %></td>
 		</tr>
 	</tbody>	

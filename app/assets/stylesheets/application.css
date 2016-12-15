@@ -12,7 +12,7 @@
  *
  *= require jquery-ui
  *= require fullcalendar
- *= requite daterangepicker
+ *= require daterangepicker
  *= require simple-sidebar
  *= require_tree .
  *= require_self
